@@ -76,9 +76,36 @@
             transition: 0.5s;
         }
         .map-container:hover { opacity: 1; filter: grayscale(0) invert(0); }
+
+        /* Nhãn dán YouTube nổi */
+        .youtube-sticker {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 99;
+            background: #ff0000;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .youtube-sticker:hover { transform: scale(1.1); background: #cc0000; }
     </style>
 </head>
 <body class="overflow-x-hidden">
+
+    <a href="https://www.youtube.com/YOUR_VIDEO_LINK" target="_blank" class="youtube-sticker font-future">
+        <i class="fa-brands fa-youtube text-xl"></i>
+        <span>Xem Video Giới Thiệu</span>
+    </a>
 
     <div id="assignmentModal" onclick="toggleAssignmentModal()">
         <div class="bg-white text-black p-8 md:p-12 rounded-[2rem] max-w-lg w-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] mx-6" onclick="event.stopPropagation()">
@@ -95,15 +122,13 @@
                         <p class="text-lg font-semibold">Nguyễn Ngọc Hà My</p>
                     </div>
                 </div>
-
-                <div class="flex items-start gap-4"> vacation
+                <div class="flex items-start gap-4">
                     <div class="bg-purple-100 p-3 rounded-xl text-purple-600"><i class="fa-solid fa-link"></i></div>
                     <div>
                         <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Tạo đường dẫn</p>
                         <p class="text-lg font-semibold">Nguyễn Hữu Nhật Trường</p>
                     </div>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <div class="bg-green-100 p-3 rounded-xl text-green-600"><i class="fa-solid fa-code"></i></div>
                     <div>
@@ -113,7 +138,6 @@
                     </div>
                 </div>
             </div>
-
             <button onclick="toggleAssignmentModal()" class="w-full mt-10 bg-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition uppercase tracking-widest text-[10px]">Đóng cửa sổ</button>
         </div>
     </div>
@@ -124,13 +148,11 @@
                 <i class="fa-brands fa-apple text-2xl text-white"></i>
                 <span class="font-future font-bold text-xl tracking-tighter">TÁO HUẾ</span>
             </div>
-            
             <div class="hidden md:flex flex-1 max-w-md mx-10 relative">
                 <input type="text" id="searchInput" placeholder="Tìm kiếm siêu phẩm..." 
                        class="w-full search-input rounded-full py-2 px-10 text-sm text-white">
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-gray-500 text-xs"></i>
             </div>
-
             <div class="flex gap-6 items-center">
                 <div class="text-[10px] text-right hidden sm:block">
                     <p class="text-gray-500 uppercase tracking-widest">Live Traffic</p>
@@ -154,10 +176,8 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">UY TÍN - CHẤT LƯỢNG TẠO NIỀM TIN</h1>
             <p class="text-gray-400 max-w-2xl mx-auto text-lg font-light">Hệ thống phân phối iPhone chính hãng lớn nhất Cố Đô.</p>
         </div>
-        
         <div class="w-full overflow-hidden">
-            <img src="./img/WOW.jfif" 
-                 class="w-full h-auto object-cover drop-shadow-[0_0_80px_rgba(0,242,255,0.15)] transform hover:scale-[1.02] transition duration-700">
+            <img src="./img/WOW.jfif" class="w-full h-auto object-cover drop-shadow-[0_0_80px_rgba(0,242,255,0.15)] transform hover:scale-[1.02] transition duration-700">
         </div>
     </header>
 
@@ -179,28 +199,40 @@
 
     <section class="container mx-auto px-6 mb-32">
         <h2 class="text-2xl font-bold mb-12 font-future italic tracking-widest text-center opacity-50 uppercase">Hệ thống Showroom Toàn quốc</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-[#161617] rounded-[2.5rem] overflow-hidden border border-gray-800 group">
-                <div class="map-container h-64 w-full">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m2!1s0x3135ab9bdad733c7%3A0x6fb1346294709ca!2zSGFub2ksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1715000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-container h-48 w-full">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.6666!2d107.5908!3d16.4678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3141a11580710603%3A0xc487a329486c91a7!2zMTIzIEjDuW5nIFYRaw_hu53uZywgUGjDuiBI4buZaSwgVGjDoG5oIHBo4buRIEh14bq_LCBUaOG7q2EgVGhpw6puIEh14bq_!5e0!3m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="p-8">
-                    <span class="text-cyan-400 text-[10px] font-bold uppercase tracking-widest">Chi nhánh Miền Bắc</span>
-                    <h3 class="text-2xl font-bold mt-2">TÁO HUẾ - HÀ NỘI</h3>
-                    <p class="text-gray-400 mt-4 text-sm font-light"><i class="fa-solid fa-location-dot mr-2"></i> 45 Cầu Giấy, Quận Cầu Giấy, Hà Nội</p>
-                    <a href="https://maps.app.goo.gl/yH8G5A5XpD1A" target="_blank" class="inline-block mt-6 text-[10px] font-bold uppercase border-b border-cyan-500 pb-1 hover:text-cyan-400 transition">Chỉ đường qua Google Maps</a>
+                <div class="p-6">
+                    <span class="text-cyan-400 text-[10px] font-bold uppercase tracking-widest">Trụ sở chính</span>
+                    <h3 class="text-xl font-bold mt-2 uppercase">Chi nhánh Huế</h3>
+                    <p class="text-gray-400 mt-2 text-xs font-light"><i class="fa-solid fa-location-dot mr-2"></i> 123 Hùng Vương, TP. Huế</p>
+                    <a href="https://maps.app.goo.gl/iKwjdn8xncUkuz8f8" target="_blank" class="inline-block mt-4 text-[9px] font-bold uppercase border-b border-cyan-500 pb-1 hover:text-cyan-400 transition">Google Maps</a>
                 </div>
             </div>
 
             <div class="bg-[#161617] rounded-[2.5rem] overflow-hidden border border-gray-800 group">
-                <div class="map-container h-64 w-full">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m2!1s0x317529292e8d3dd1%3A0xf11f59267a0364e0!2sHo%20Chi%20Minh%20City%2C%20Vietnam!5e0!3m2!1sen!2s!4v1715000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-container h-48 w-full">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.863855881422!2d105.782161!3d21.0381328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab354920c233%3A0x5d0313a3bf802e57!2zQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="p-8">
+                <div class="p-6">
+                    <span class="text-cyan-400 text-[10px] font-bold uppercase tracking-widest">Chi nhánh Miền Bắc</span>
+                    <h3 class="text-xl font-bold mt-2 uppercase">Chi nhánh Hà Nội</h3>
+                    <p class="text-gray-400 mt-2 text-xs font-light"><i class="fa-solid fa-location-dot mr-2"></i> 45 Cầu Giấy, Quận Cầu Giấy, HN</p>
+                    <a href="https://maps.app.goo.gl/DMz6ZpfTAxwi7U9g8" target="_blank" class="inline-block mt-4 text-[9px] font-bold uppercase border-b border-cyan-500 pb-1 hover:text-cyan-400 transition">Google Maps</a>
+                </div>
+            </div>
+
+            <div class="bg-[#161617] rounded-[2.5rem] overflow-hidden border border-gray-800 group">
+                <div class="map-container h-48 w-full">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.460232428341!2d106.6652!3d10.7766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752edca2d76555%3A0x6a0c0e9d1e01d!2zQ8OhY2ggTeG6oW5nIFRow6FuZyA4LCBUUC4gSENN!5e0!3m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="p-6">
                     <span class="text-cyan-400 text-[10px] font-bold uppercase tracking-widest">Chi nhánh Miền Nam</span>
-                    <h3 class="text-2xl font-bold mt-2">TÁO HUẾ - TP. HCM</h3>
-                    <p class="text-gray-400 mt-4 text-sm font-light"><i class="fa-solid fa-location-dot mr-2"></i> 789 Cách Mạng Tháng 8, Quận 10, TP. HCM</p>
-                    <a href="https://maps.app.goo.gl/zJ8G5A5XpD1A" target="_blank" class="inline-block mt-6 text-[10px] font-bold uppercase border-b border-cyan-500 pb-1 hover:text-cyan-400 transition">Chỉ đường qua Google Maps</a>
+                    <h3 class="text-xl font-bold mt-2 uppercase">Chi nhánh TP. HCM</h3>
+                    <p class="text-gray-400 mt-2 text-xs font-light"><i class="fa-solid fa-location-dot mr-2"></i> 789 Cách Mạng Tháng 8, Q.10, HCM</p>
+                    <a href="https://maps.app.goo.gl/LZhxDdw2WrY7TMht9" target="_blank" class="inline-block mt-4 text-[9px] font-bold uppercase border-b border-cyan-500 pb-1 hover:text-cyan-400 transition">Google Maps</a>
                 </div>
             </div>
         </div>
@@ -216,7 +248,6 @@
                     <p class="flex items-center gap-3"><i class="fa-solid fa-envelope w-5 text-cyan-500"></i> taodo123hungvuong@gmail.com </p>
                 </div>
             </div>
-
             <div class="text-center flex flex-col items-center">
                 <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Follow the Future</h4>
                 <div class="flex justify-center gap-10 text-3xl mb-12">
@@ -224,12 +255,8 @@
                     <a href="https://www.instagram.com/taodo123hungvuong?igsh=MWxwbmprZzFudWduYw==" target="_blank" class="text-gray-500 hover:text-pink-500 transition-all transform hover:-translate-y-2"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@taodo123hungvuong?_r=1&_t=ZS-94bMs25ha1F" target="_blank" class="text-gray-500 hover:text-white transition-all transform hover:-translate-y-2"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
-                
-                <button onclick="toggleAssignmentModal()" class="bg-white text-black px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all shadow-lg active:scale-95">
-                    Bảng phân công
-                </button>
+                <button onclick="toggleAssignmentModal()" class="bg-white text-black px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all shadow-lg active:scale-95">Bảng phân công</button>
             </div>
-
             <div class="text-right flex flex-col justify-between">
                 <div>
                     <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em] mb-2">Visitor Count</p>
@@ -243,20 +270,10 @@
     <div id="cartView" class="fixed top-20 right-6 w-80 bg-[#161617]/95 backdrop-blur-2xl border border-gray-800 rounded-2xl p-6 shadow-2xl hidden z-[60]">
         <h3 class="font-bold border-b border-gray-800 pb-3 mb-4 uppercase text-[10px] tracking-widest text-gray-500">Giỏ hàng của bạn</h3>
         <div id="cartList" class="max-h-64 overflow-y-auto space-y-3 mb-6 custom-scrollbar"></div>
-        
-        <div id="discountInfo" class="hidden mb-4 p-2 bg-green-900/30 border border-green-500/50 rounded-lg text-[10px] text-green-400 font-bold text-center animate-pulse">
-            🎉 BẠN ĐƯỢC GIẢM 10% (GIỎ HÀNG > 20TR)
-        </div>
-
+        <div id="discountInfo" class="hidden mb-4 p-2 bg-green-900/30 border border-green-500/50 rounded-lg text-[10px] text-green-400 font-bold text-center animate-pulse">🎉 GIẢM 10% (GIỎ HÀNG > 20TR)</div>
         <div class="border-t border-gray-800 pt-4 space-y-2">
-            <div class="flex justify-between text-xs text-gray-500">
-                <span>Tạm tính:</span>
-                <span id="subTotal">0₫</span>
-            </div>
-            <div class="flex justify-between font-bold text-lg">
-                <span class="text-gray-400 text-xs">TỔNG CỘNG:</span>
-                <span id="cartTotal" class="text-cyan-400 font-future">0₫</span>
-            </div>
+            <div class="flex justify-between text-xs text-gray-500"><span>Tạm tính:</span><span id="subTotal">0₫</span></div>
+            <div class="flex justify-between font-bold text-lg"><span class="text-gray-400 text-xs">TỔNG:</span><span id="cartTotal" class="text-cyan-400 font-future">0₫</span></div>
         </div>
         <button class="w-full bg-white text-black py-3 mt-6 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-cyan-400 transition" onclick="alert('Đơn hàng đã được ghi nhận!')">Thanh toán</button>
     </div>
@@ -264,17 +281,13 @@
     <div id="productModal" class="modal p-6" onclick="closeModal()">
         <div class="bg-[#1c1c1e] max-w-4xl w-full rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row gap-10 relative border border-gray-800" onclick="event.stopPropagation()">
             <button class="absolute top-8 right-8 text-3xl text-gray-500 hover:text-white" onclick="closeModal()">&times;</button>
-            <div class="md:w-1/2 flex justify-center items-center">
-                <img id="modalImg" src="" class="max-h-[380px] object-contain drop-shadow-2xl">
-            </div>
+            <div class="md:w-1/2 flex justify-center items-center"><img id="modalImg" src="" class="max-h-[380px] object-contain drop-shadow-2xl"></div>
             <div class="md:w-1/2 text-left space-y-6">
                 <span class="text-cyan-400 font-bold text-xs uppercase tracking-[0.2em] font-future">Flagship Selection</span>
                 <h2 id="modalName" class="text-4xl font-bold tracking-tight"></h2>
                 <p id="modalPrice" class="text-white text-3xl font-bold font-future"></p>
                 <div id="modalDesc" class="text-gray-400 text-sm leading-relaxed border-t border-gray-800 pt-6 font-light"></div>
-                <button id="addToCartBtn" class="w-full bg-[#0071e3] py-4 rounded-full font-bold hover:bg-blue-600 transition shadow-xl shadow-blue-900/20 active:scale-95">
-                    Thêm vào túi hàng
-                </button>
+                <button id="addToCartBtn" class="w-full bg-[#0071e3] py-4 rounded-full font-bold hover:bg-blue-600 transition shadow-xl shadow-blue-900/20 active:scale-95">Thêm vào túi hàng</button>
             </div>
         </div>
     </div>
@@ -287,7 +300,7 @@
 
         const products = [
             { id: 1, name: "iPhone 17 Pro Max", price: 34990000, img: "./img/17 promax.jfif", desc: "Phiên bản cao cấp nhất với màn hình 6.9 inch, chip A19 Pro 3nm mạnh mẽ." },
-            { id: 2, name: "iPhone 17 Pro", price: 29990000, img: "./img/17 pro.jfif", desc: " Dòng smatphone có chip A19 Pro 3nm mạnh mẽ, màn hình 6.3-inch." },
+            { id: 2, name: "iPhone 17 Pro", price: 29990000, img: "./img/17 pro.jfif", desc: "Dòng smatphone có chip A19 Pro 3nm mạnh mẽ, màn hình 6.3-inch." },
             { id: 3, name: "iPhone 16 Pro Max", price: 26890000, img: "./img/16.jfif", desc: "Màn hình 6.9 inch, viền siêu mỏng và khung Titan bền bỉ." },
             { id: 4, name: "iPhone 16 Pro", price: 23490000, img: "./img/16.jfif", desc: "Màn hình 6.3 inch viền siêu mỏng, chip A18 Pro mạnh mẽ." },
             { id: 5, name: "iPhone 15 Pro Max", price: 21990000, img: "./img/15promax.jfif", desc: "Khung viền Titanium bền nhẹ, chip A17 Pro 3nm mạnh mẽ." },
@@ -324,8 +337,7 @@
                             <img src="${p.img}" class="h-52 mx-auto object-contain mb-6 transition-transform group-hover:scale-110 duration-500">
                             <h3 class="text-xl font-bold uppercase tracking-tighter">${p.name}</h3>
                             <p class="text-cyan-400 font-future font-bold mt-4 text-lg">${p.price.toLocaleString()}₫</p>
-                        </div>
-                    `;
+                        </div>`;
                 });
             }
         }
@@ -352,11 +364,8 @@
 
         document.getElementById('addToCartBtn').onclick = () => {
             const p = products.find(x => x.id === currentProductId);
-            if(cart[p.id]) {
-                cart[p.id].quantity++;
-            } else {
-                cart[p.id] = { ...p, quantity: 1 };
-            }
+            if(cart[p.id]) cart[p.id].quantity++;
+            else cart[p.id] = { ...p, quantity: 1 };
             updateCart();
             closeModal();
         };
@@ -365,61 +374,42 @@
             const cartList = document.getElementById('cartList');
             const discountInfo = document.getElementById('discountInfo');
             cartList.innerHTML = '';
-
-            let totalItems = 0;
-            let subTotalPrice = 0;
+            let totalItems = 0, subTotal = 0;
 
             Object.values(cart).forEach(item => {
                 totalItems += item.quantity;
-                subTotalPrice += item.price * item.quantity;
-
+                subTotal += item.price * item.quantity;
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'bg-[#222]/50 p-3 rounded-lg text-xs border border-gray-700';
                 itemDiv.innerHTML = `
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-white font-bold">${item.name}</span>
-                        <span class="text-cyan-400">${item.price.toLocaleString()}₫</span>
-                    </div>
+                    <div class="flex justify-between items-center mb-2"><span class="text-white font-bold">${item.name}</span><span class="text-cyan-400">${item.price.toLocaleString()}₫</span></div>
                     <div class="flex justify-between items-center">
                         <div class="flex gap-2 items-center">
-                            <button onclick="decreaseQty(${item.id})" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded transition">−</button>
+                            <button onclick="decreaseQty(${item.id})" class="bg-gray-700 px-2 py-1 rounded">−</button>
                             <span class="w-8 text-center">${item.quantity}</span>
-                            <button onclick="increaseQty(${item.id})" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded transition">+</button>
+                            <button onclick="increaseQty(${item.id})" class="bg-gray-700 px-2 py-1 rounded">+</button>
                         </div>
                         <span class="text-cyan-400 font-bold">${(item.price * item.quantity).toLocaleString()}₫</span>
-                    </div>
-                `;
+                    </div>`;
                 cartList.appendChild(itemDiv);
             });
 
-            let finalTotal = subTotalPrice;
-            if (subTotalPrice > 20000000) {
-                finalTotal = subTotalPrice * 0.9;
+            let finalTotal = subTotal;
+            if (subTotal > 20000000) {
+                finalTotal = subTotal * 0.9;
                 discountInfo.classList.remove('hidden');
-            } else {
-                discountInfo.classList.add('hidden');
-            }
+            } else discountInfo.classList.add('hidden');
 
             document.getElementById('cart-count').innerText = totalItems;
-            document.getElementById('subTotal').innerText = subTotalPrice.toLocaleString() + "₫";
+            document.getElementById('subTotal').innerText = subTotal.toLocaleString() + "₫";
             document.getElementById('cartTotal').innerText = finalTotal.toLocaleString() + "₫";
         }
 
-        function increaseQty(productId) {
-            if(cart[productId]) {
-                cart[productId].quantity++;
-                updateCart();
-            }
-        }
-
-        function decreaseQty(productId) {
-            if(cart[productId]) {
-                cart[productId].quantity--;
-                if(cart[productId].quantity <= 0) {
-                    delete cart[productId];
-                }
-                updateCart();
-            }
+        function increaseQty(id) { cart[id].quantity++; updateCart(); }
+        function decreaseQty(id) { 
+            cart[id].quantity--; 
+            if(cart[id].quantity <= 0) delete cart[id]; 
+            updateCart(); 
         }
 
         function toggleCartView() {
@@ -428,15 +418,12 @@
         }
         function toggleLogin() {
             const name = prompt("Nhập tên của bạn:");
-            if(name) {
-                document.getElementById('userName').innerText = name.substring(0, 8).toUpperCase();
-            }
+            if(name) document.getElementById('userName').innerText = name.substring(0, 8).toUpperCase();
         }
         setInterval(() => {
             const el = document.getElementById('visitor-count');
             const el2 = document.getElementById('footer-visitor');
-            let val = parseInt(el.innerText.replace(/,/g, ''));
-            val += 1;
+            let val = parseInt(el.innerText.replace(/,/g, '')) + 1;
             el.innerText = val.toLocaleString();
             el2.innerText = val.toLocaleString();
         }, 4000);
